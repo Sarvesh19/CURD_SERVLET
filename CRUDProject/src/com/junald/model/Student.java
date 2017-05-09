@@ -2,16 +2,16 @@ package com.junald.model;
 
 public class Student {
 
-	private int studentId;
+	private Integer studentId;
 	private String firstName;
 	private String lastName;
 	private String course;
-	private int year;
+	private String years;
 	
-	public int getStudentId() {
+	public Integer getStudentId() {
 		return studentId;
 	}
-	public void setStudentId(int studentId) {
+	public void setStudentId(Integer studentId) {
 		this.studentId = studentId;
 	}
 	public String getFirstName() {
@@ -32,17 +32,17 @@ public class Student {
 	public void setCourse(String course) {
 		this.course = course;
 	}
-	public int getYear() {
-		return year;
+	public String getYears() {
+		return years;
 	}
-	public void setYear(int year) {
-		this.year = year;
+	public void setYears(String years) {
+		this.years = years;
 	}
 	@Override
 	public String toString() {
-		return "Student [studentId=" + studentId + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", course=" + course + ", year="
-				+ year + "]";
+		return "Student [studentId=" + studentId + ", firstName=" + firstName + ", lastName=" + lastName + ", course="
+				+ course + ", years=" + years + "]";
 	}
+
 		
 }

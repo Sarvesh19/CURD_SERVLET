@@ -21,12 +21,13 @@ public class StudentDAOImplementation implements StudentDAO {
 	@Override
 	public void addStudent( Student student ) {
 		try {
-			String query = "insert into student (firstName, lastName, course, year) values (?,?,?,?)";
+			String query = "insert into student (studentId, firstName, lastName, course, years) values (?,?,?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
-			preparedStatement.setString( 1, student.getFirstName() );
-			preparedStatement.setString( 2, student.getLastName() );
-			preparedStatement.setString( 3, student.getCourse() );
-			preparedStatement.setInt( 4, student.getYear() );
+			preparedStatement.setString( 2, student.getFirstName() );
+			preparedStatement.setString( 3, student.getLastName() );
+			preparedStatement.setString( 4, student.getCourse() );
+			preparedStatement.setString( 5, student.getYears() );
+			preparedStatement.setInt( 1, student.getStudentId() );
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -48,13 +49,13 @@ public class StudentDAOImplementation implements StudentDAO {
 	@Override
 	public void updateStudent( Student student ) {
 		try {
-			String query = "update student set firstName=?, lastName=?, course=?, year=? where studentId=?";
+			String query = "update student set firstName=?, lastName=?, course=?, years=? where studentId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
-			preparedStatement.setString( 1, student.getFirstName() );
-			preparedStatement.setString( 2, student.getLastName() );
-			preparedStatement.setString( 3, student.getCourse() );
-			preparedStatement.setInt( 4, student.getYear() );
-			preparedStatement.setInt(5, student.getStudentId());
+			preparedStatement.setString( 2, student.getFirstName() );
+			preparedStatement.setString( 3, student.getLastName() );
+			preparedStatement.setString( 4, student.getCourse() );
+			preparedStatement.setString( 5, student.getYears() );
+			preparedStatement.setInt(1, student.getStudentId());
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -73,7 +74,7 @@ public class StudentDAOImplementation implements StudentDAO {
 				student.setFirstName( resultSet.getString( "firstName" ) );
 				student.setLastName( resultSet.getString( "lastName" ) );
 				student.setCourse( resultSet.getString( "course" ) );
-				student.setYear( resultSet.getInt( "year" ) );
+				student.setYears( resultSet.getString( "years" ) );
 				students.add(student);
 			}
 			resultSet.close();
@@ -96,7 +97,7 @@ public class StudentDAOImplementation implements StudentDAO {
 				student.setFirstName( resultSet.getString( "firstName" ) );
 				student.setLastName( resultSet.getString( "LastName" ) );
 				student.setCourse( resultSet.getString( "course" ) );
-				student.setYear( resultSet.getInt( "year" ) );
+				student.setYears( resultSet.getString( "years" ) );
 			}
 			resultSet.close();
 			preparedStatement.close();

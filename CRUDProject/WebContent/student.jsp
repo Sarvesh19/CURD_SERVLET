@@ -14,7 +14,7 @@
 			<div>
 				<label for="studentId">Student ID</label> <input type="text"
 					name="studentId" value="<c:out value="${student.studentId}" />"
-					readonly="readonly" placeholder="Student ID" />
+					 placeholder="Student ID" />
 			</div>
 			<div>
 				<label for="firstName">First Name</label> <input type="text"
@@ -31,8 +31,8 @@
 					value="<c:out value="${student.course}" />" placeholder="Course" />
 			</div>
 			<div>
-				<label for="year">Year</label> <input type="text" name="year"
-					value="<c:out value="${student.year}" />" placeholder="Year" />
+				<label for="years">Year</label> <input type="text" name="years"
+					value="<c:out value="${student.years}" />" placeholder="Years" />
 			</div>
 			<div>
 				<input type="submit" value="Submit" />
