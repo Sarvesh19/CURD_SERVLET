@@ -17,7 +17,6 @@ public class HttpSessionTest implements HttpSessionListener {
 		ctx = e.getSession().getServletContext();
 		ctx.setAttribute("totalusers", total);
 		ctx.setAttribute("currentusers", current);
-
 	}
 
 	public void sessionDestroyed(HttpSessionEvent e) {
