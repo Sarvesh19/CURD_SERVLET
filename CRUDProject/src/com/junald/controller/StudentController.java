@@ -57,7 +57,7 @@ public class StudentController extends HttpServlet {
 		student.setFirstName( request.getParameter( "firstName" ) );
 		student.setLastName( request.getParameter( "lastName" ) );
 		student.setCourse( request.getParameter( "course" ) );
-		student.setYear( Integer.parseInt( request.getParameter( "year" ) ) );
+		student.setYears(  request.getParameter( "years" )  );
 		String studentId = request.getParameter("studentId");
 		
 		if( studentId == null || studentId.isEmpty() ) 

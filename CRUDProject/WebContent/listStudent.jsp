@@ -26,7 +26,7 @@
 					<td><c:out value="${student.firstName}" /></td>
 					<td><c:out value="${student.lastName}" /></td>
 					<td><c:out value="${student.course}" /></td>
-					<td><c:out value="${student.year}" /></td>
+					<td><c:out value="${student.years}" /></td>
 					<td><a
 						href="StudentController.do?action=edit&studentId=<c:out value="${student.studentId }"/>">Update</a></td>
 					<td><a
