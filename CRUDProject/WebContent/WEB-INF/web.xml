@@ -4,6 +4,9 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <listener>
+		<listener-class>com.junald.session.HttpSessionTest</listener-class>
+	</listener>
   <servlet>
   <servlet-name>StudentController</servlet-name>
   <servlet-class>com.junald.controller.StudentController_test</servlet-class>

@@ -28,7 +28,7 @@ public class StudentController_test extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String forward = "";
 		String action = request.getParameter( "action" );
-		
+		// request.getSession().invalidate(); if you want to destroy session
 		if( action.equalsIgnoreCase( "delete" ) ) {
 			forward = lIST_STUDENT;
 			int studentId = Integer.parseInt( request.getParameter("studentId") );
@@ -58,10 +58,13 @@ public class StudentController_test extends HttpServlet {
 		student.setLastName( request.getParameter( "lastName" ) );
 		student.setCourse( request.getParameter( "course" ) );
 		student.setYears(  request.getParameter( "years" )  );
+
 		if(request.getParameter("studentId") != null){
 			student.setStudentId(Integer.parseInt(request.getParameter("studentId")));
 
 		}
+
+		student.setStudentId(Integer.parseInt( request.getParameter("studentId") ));
 		
 		if( student.getStudentId() != null &&  student.getStudentId()>0) 
 			dao.addStudent(student);
