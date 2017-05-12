@@ -1,0 +1,26 @@
+Note: Git command used for rebase and push in git bash
+
+
+  1  git rebase --abort
+    2  git rebase --abort
+    3  git remote -v
+    4  git fetch origin
+    5  git rebase origin/ON-CURD_Servlet
+    6  git rebase --continue
+    7  git cli
+    8  git mergetool -t meld
+    9  git mergetool
+   10  git add
+   11  git add .
+   12  git push ON-CURD
+   13  git push ON-CURD_Servlet
+   14  git rebase origin/ON-CURD_Servlet
+   15  git rebase --continue
+   16  git add .
+   17  git push origin/ON-CURD_Servlet
+   18  git push ON-CURD_Servlet
+   19  git push ON-CURD_SERVLET
+   20  git fetch origin
+   21  git push
+   22  git pull
+   23  git push
